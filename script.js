@@ -50,7 +50,7 @@ async function fetchWeather() {
     });
     /////////////////////////
     city.textContent = data.name;
-    temp.textContent = `${Math.round(data.main.temp)}°C`;
+    temp.textContent = `Temperatura actula: ${Math.round(data.main.feels_like)}°C`;
     max.textContent = `Max: ${Math.round(data.main.temp_max)}°C`;
     mini.textContent = `Min: ${Math.round(data.main.temp_min)}°C`;
     sunrise.textContent = `Răsărit: ${sunriseTime}`;
@@ -75,30 +75,5 @@ function formatCity(name) {
     .replace(/-+/g, "-");
 }
 
-function getWeatherEmoji(weather) {
-    const condition = weather.toLowerCase(); 
-    switch (condition) {
-      case "clear":
-        return "☀️"; 
-      case "clouds":
-        return "☁️";
-      case "rain":
-        return "🌧️"; 
-      case "drizzle":
-        return "🌦️"; 
-      case "snow":
-        return "❄️"; 
-      case "thunderstorm":
-        return "⛈️"; 
-      case "mist":
-      case "haze":
-      case "fog":
-        return "🌫️"; 
-      case "smoke":
-        return "💨"; 
-      case "dust":
-      default:
-        return "🌈"; 
-    }
-  }
+
   
